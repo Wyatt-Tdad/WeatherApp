@@ -13,10 +13,10 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
-    @GetMapping
+    @GetMapping("/")
 public String getIndex(Model model) {
     Response response = weatherService.getForecast("43210");
-    model.addAttribute ("data", response);
+    System.out.println(response);
     return "index";
 }
 }
